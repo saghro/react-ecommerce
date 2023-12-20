@@ -2,7 +2,7 @@ import { DarkModeOutlined, ExpandMore, LightModeOutlined } from "@mui/icons-mate
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { Box, IconButton, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Container, IconButton, Stack, Typography, useTheme } from "@mui/material";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -32,8 +32,14 @@ const Header1 = () => {
     setAnchorEl(null);
   };
   return (
-    <Box sx={{ bgcolor: "#2B3445" }}>
-      <Stack direction={"row"} alignItems={"center"}>
+    <Box sx={{ 
+      bgcolor: "#2B3445",
+       py:"4px",
+       borderBottomRightRadius:4,
+       borderBottomLeftRadius:4
+       }}>
+       <Container>
+       <Stack direction={"row"} alignItems={"center"}>
         <Typography
           sx={{
             mr: 2,
@@ -69,9 +75,9 @@ const Header1 = () => {
                 );
                 colorMode.toggleColorMode();
               }}
-              color="inherit"
+         
             >
-              <LightModeOutlined fontSize="small" />
+              <LightModeOutlined fontSize="small" sx={{fontSize:"16px" ,color:"#fff"}}/>
             </IconButton>
           ) : (
             <IconButton
@@ -82,7 +88,7 @@ const Header1 = () => {
                 );
                 colorMode.toggleColorMode();
               }}
-              color="inherit"
+              
             >
               <DarkModeOutlined />
             </IconButton>
@@ -102,12 +108,12 @@ const Header1 = () => {
             aria-label="when device is locked"
             aria-expanded={open ? "true" : undefined}
             onClick={handleClickListItem}
-            sx={{"&:hover":{cursor:"pointer"}}}
+            sx={{"&:hover":{cursor:"pointer"},px:1}}
           >
             <ListItemText
              sx={{"MuiTypography-root":{fontSize:"11px" , color:"#fff"}, }}
             secondary={options[selectedIndex]} /> 
-            <ExpandMore  sx={{fontSize:"16px"}}/>
+            <ExpandMore  sx={{fontSize:"16px" , color:"#fff"}}/>
           </ListItem>
         </List>
         <Menu
@@ -146,6 +152,7 @@ const Header1 = () => {
         />
         <TwitterIcon sx={{ fontSize: "16px", color: "#fff" }} />
       </Stack>
+       </Container>
     </Box>
   );
 };
