@@ -1,19 +1,19 @@
-import { ShoppingCartOutlined } from "@mui/icons-material";
-import {Badge,Container,IconButton,InputBase,Stack,Typography,alpha,styled,} from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { Expand, ExpandMore, ShoppingCartOutlined } from "@mui/icons-material";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Badge, Container, IconButton, InputBase, Stack, Typography, alpha, styled, } from "@mui/material";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import { useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
+   border:"2px solid #777",
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
@@ -59,10 +59,10 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 const options = [
-    'Show some love to MUI',
-    'Show all notification content',
-    'Hide sensitive notification content',
-    'Hide all notification content',
+    'All Categories',
+    'CAR',
+    'Clothes',
+    'Electronics',
   ];
 
 const Header2 = () => {
@@ -88,7 +88,9 @@ const Header2 = () => {
         <ShoppingCartOutlined />
         <Typography variant="body2"> AGAFAY STORE</Typography>
       </Stack>
-      <Search sx={{ borderRadius: "22px" }}>
+      <Search sx={{
+        display:"flex",
+        borderRadius: "22px", }}>
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
@@ -112,9 +114,10 @@ const Header2 = () => {
             onClick={handleClickListItem}
           >
             <ListItemText
-              primary="When device is locked"
+             
               secondary={options[selectedIndex]}
             />
+            <ExpandMore sx={{fontSize:"16px"}}/>
           </ListItem>
         </List>
         <Menu
@@ -130,7 +133,6 @@ const Header2 = () => {
           {options.map((option, index) => (
             <MenuItem
               key={option}
-              disabled={index === 0}
               selected={index === selectedIndex}
               onClick={(event) => handleMenuItemClick(event, index)}
             >
