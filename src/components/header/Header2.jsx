@@ -1,4 +1,4 @@
-import { Expand, ExpandMore, ShoppingCartOutlined } from "@mui/icons-material";
+import { ExpandMore, ShoppingCartOutlined } from "@mui/icons-material";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -110,10 +110,15 @@ const Header2 = () => {
         <List
           component="nav"
           aria-label="Device settings"
-          sx={{ bgcolor: theme.palette.myColor.main }}
+          // @ts-ignore
+          sx={{ bgcolor: theme.palette.myColor.main ,
+            borderBottomRightRadius:22,
+            borderTopRightRadius:22,
+            p:"0"
+          }}
         >
           <ListItem
-            button
+            
             id="lock-button"
             aria-haspopup="listbox"
             aria-controls="lock-menu"
@@ -121,7 +126,9 @@ const Header2 = () => {
             aria-expanded={open ? "true" : undefined}
             onClick={handleClickListItem}
           >
-            <ListItemText secondary={options[selectedIndex]} />
+            <ListItemText 
+            sx={{width:80, textAlign:"center" , "&:hover":{cursor:"pointer"}}}
+            secondary={options[selectedIndex]} />
             <ExpandMore sx={{ fontSize: "16px" }} />
           </ListItem>
         </List>
