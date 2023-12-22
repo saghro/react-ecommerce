@@ -21,15 +21,16 @@ import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
+  flexGrow:0.4,
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  border: "2px solid #777",
+  border: "1px solid #777",
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
-  width: "100%",
+  minWidth: "300px",
   [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(3),
     width: "auto",
@@ -44,6 +45,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  color:"#777"
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -97,6 +99,7 @@ const Header2 = () => {
         sx={{
           display: "flex",
           borderRadius: "22px",
+          justifyContent:"space-between"
         }}
       >
         <SearchIconWrapper>
@@ -127,12 +130,13 @@ const Header2 = () => {
             onClick={handleClickListItem}
           >
             <ListItemText 
-            sx={{width:80, textAlign:"center" , "&:hover":{cursor:"pointer"}}}
+            sx={{width:95, textAlign:"center" , "&:hover":{cursor:"pointer"}}}
             secondary={options[selectedIndex]} />
             <ExpandMore sx={{ fontSize: "16px" }} />
           </ListItem>
         </List>
         <Menu
+        
           id="lock-menu"
           anchorEl={anchorEl}
           open={open}
@@ -144,6 +148,7 @@ const Header2 = () => {
         >
           {options.map((option, index) => (
             <MenuItem
+            sx={{fontSize:"13px"}}
               key={option}
               selected={index === selectedIndex}
               onClick={(event) => handleMenuItemClick(event, index)}
