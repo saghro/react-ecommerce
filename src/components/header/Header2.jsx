@@ -18,9 +18,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import WindowIcon from "@mui/icons-material/Window";
-import KeyboardArrowRightOutlineIcon from "@mui/icons-material/KeyboardArrowRightOutlinedIcon";
+
 
 const Search = styled("div")(({ theme }) => ({
   flexGrow:0.4,
