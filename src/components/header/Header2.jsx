@@ -9,9 +9,8 @@ import {
   InputBase,
   Stack,
   Typography,
-  alpha,
   styled,
-  useTheme,
+  useTheme
 } from "@mui/material";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -19,6 +18,9 @@ import ListItemText from "@mui/material/ListItemText";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import WindowIcon from "@mui/icons-material/Window";
+import KeyboardArrowRightOutlineIcon from "@mui/icons-material/KeyboardArrowRightOutlinedIcon";
 
 const Search = styled("div")(({ theme }) => ({
   flexGrow:0.4,
@@ -26,7 +28,7 @@ const Search = styled("div")(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   border: "1px solid #777",
   "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
+    border: "1px solid #333",
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
@@ -74,7 +76,7 @@ const options = ["All Categories", "CAR", "Clothes", "Electronics"];
 
 const Header2 = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [selectedIndex, setSelectedIndex] = useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const open = Boolean(anchorEl);
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);

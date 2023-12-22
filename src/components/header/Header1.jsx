@@ -90,7 +90,7 @@ const Header1 = () => {
               }}
               
             >
-              <DarkModeOutlined />
+              <DarkModeOutlined fontSize="small" sx={{fontSize:"16px" ,color:"#fff"}} />
             </IconButton>
           )}
         </div>
