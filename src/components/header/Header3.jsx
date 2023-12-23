@@ -159,8 +159,8 @@ const Header3 = () => {
           </IconButton>
           {[
             { mainLink: "Home", subLink: ["Link1", "Link2", "Link3"] },
-            { mainLink: "Home", subLink: ["Link1", "Link2", "Link3"] },
-            { mainLink: "Home", subLink: ["Link1", "Link2", "Link3"] },
+            { mainLink: "Home2", subLink: ["Link1", "Link2", "Link3"] },
+            { mainLink: "Home3", subLink: ["Link1", "Link2", "Link3"] },
           ].map((item) => {
             return (
               <Accordion key={item.mainLink} elevation={0} sx={{ bgcolor: "initial" }}>
@@ -172,16 +172,16 @@ const Header3 = () => {
                   <Typography>{item.mainLink}</Typography>
                 </AccordionSummary>
                 <List sx={{ py: 0, my: 0 }}>
-                  <ListItem sx={{ py: 0, my: 0 }}>
-                    <ListItemButton>
-                      <ListItemText primary="Trash" />
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem>
-                    <ListItemButton component="a" href="#simple-list">
-                      <ListItemText primary="Spam" />
-                    </ListItemButton>
-                  </ListItem>
+                 {item.subLink.map((link)=>{
+                    return(
+                        <ListItem key={link} sx={{ py: 0, my: 0 }}>
+                        <ListItemButton>
+                          <ListItemText primary={link} />
+                        </ListItemButton>
+                      </ListItem>
+                    )
+                 })}
+                
                 </List>
               </Accordion>
             );
