@@ -21,9 +21,9 @@ import {
 } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
@@ -142,7 +142,11 @@ const Header3 = () => {
         anchor={"top"}
         open={state["top"]}
         onClose={toggleDrawer("top", false)}
-        sx={{ ".MuiPaper-root": { height: "100%" } }}
+        sx={{
+          ".MuiPaper-root.css-1sozasi-MuiPaper-root-MuiDrawer-paper": {
+            height: "100%",
+          },
+        }}
       >
         <Box
           sx={{ width: 444, mx: "auto", my: 6, position: "relative", pt: 10 }}
@@ -153,32 +157,35 @@ const Header3 = () => {
           >
             <Close />
           </IconButton>
-         {["aaa","bbb","ccc"].map((item)=>{
-            return(
-                <Accordion key={item} elevation={0} sx={{ bgcolor: "initial" }}>
+          {[
+            { mainLink: "Home", subLink: ["Link1", "Link2", "Link3"] },
+            { mainLink: "Home", subLink: ["Link1", "Link2", "Link3"] },
+            { mainLink: "Home", subLink: ["Link1", "Link2", "Link3"] },
+          ].map((item) => {
+            return (
+              <Accordion key={item.mainLink} elevation={0} sx={{ bgcolor: "initial" }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography>Accordion 1</Typography>
+                  <Typography>{item.mainLink}</Typography>
                 </AccordionSummary>
-                  <List sx={{py:0,my:0}}>
-                    <ListItem sx={{py:0,my:0}}>
-                      <ListItemButton>
-                        <ListItemText primary="Trash" />
-                      </ListItemButton>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemButton component="a" href="#simple-list">
-                        <ListItemText primary="Spam" />
-                      </ListItemButton>
-                    </ListItem>
-                  </List>
-                
+                <List sx={{ py: 0, my: 0 }}>
+                  <ListItem sx={{ py: 0, my: 0 }}>
+                    <ListItemButton>
+                      <ListItemText primary="Trash" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem>
+                    <ListItemButton component="a" href="#simple-list">
+                      <ListItemText primary="Spam" />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
               </Accordion>
             );
-         })}
+          })}
         </Box>
       </Drawer>
     </Container>
