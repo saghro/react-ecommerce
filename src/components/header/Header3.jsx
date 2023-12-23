@@ -1,17 +1,19 @@
-import { KeyboardArrowRightOutlined } from "@mui/icons-material";
-import WindowIcon from "@mui/icons-material/Window";
-import Menu from "@mui/material/Menu";
+import { ElectricBikeOutlined, KeyboardArrowRightOutlined } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Box, Button, Container, IconButton, Typography, useTheme } from "@mui/material";
+import WindowIcon from "@mui/icons-material/Window";
+import {
+    Box,
+    Button,
+    Container,
+    IconButton,
+    ListItemIcon,
+    ListItemText,
+    Typography,
+    useTheme,
+} from "@mui/material";
+import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
-import{
-    SportsEsportsOutlined,
-    ElectricBikeOutlined,
-    LaptopChromebookOutlined,
-    MenuBookOutlined,
-} from "@mui/icons-material"
-
 
 const Header3 = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -38,7 +40,6 @@ const Header3 = () => {
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
           onClick={handleClick}
-          
           sx={{
             width: 222,
             // @ts-ignore
@@ -68,14 +69,39 @@ const Header3 = () => {
             "aria-labelledby": "basic-button",
           }}
         >
-          <MenuItem onClick={handleClose}> <SportsEsportsOutlined /> Profile</MenuItem>
-          <MenuItem onClick={handleClose}>My account</MenuItem>
-          <MenuItem onClick={handleClose}>Logout</MenuItem>
+          <MenuItem>
+            <ListItemIcon>
+              <ElectricBikeOutlined fontSize="small" />
+            </ListItemIcon>
+            <ListItemText>Profile</ListItemText>
+           
+          </MenuItem>
+          <MenuItem>
+            <ListItemIcon>
+              <ElectricBikeOutlined fontSize="small" />
+            </ListItemIcon>
+            <ListItemText>Profile</ListItemText>
+           
+          </MenuItem>
+          <MenuItem>
+            <ListItemIcon>
+              <ElectricBikeOutlined fontSize="small" />
+            </ListItemIcon>
+            <ListItemText>Profile</ListItemText>
+           
+          </MenuItem>
+          <MenuItem>
+            <ListItemIcon>
+              <ElectricBikeOutlined fontSize="small" />
+            </ListItemIcon>
+            <ListItemText>Profile</ListItemText>
+           
+          </MenuItem>
         </Menu>
       </Box>
 
       <IconButton>
-         <MenuIcon /> 
+        <MenuIcon />
       </IconButton>
     </Container>
   );
