@@ -6,6 +6,7 @@ import {
   MenuBookOutlined,
   SportsEsportsOutlined,
 } from "@mui/icons-material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuIcon from "@mui/icons-material/Menu";
 import WindowIcon from "@mui/icons-material/Window";
 import {
@@ -16,11 +17,17 @@ import {
   IconButton,
   ListItemIcon,
   ListItemText,
-  Typography,
   useTheme,
 } from "@mui/material";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 import { useState } from "react";
 
 const Header3 = () => {
@@ -97,6 +104,7 @@ const Header3 = () => {
           sx={{
             ".MuiPaper-root": {
               width: 220,
+              // @ts-ignore
               bgcolor: theme.palette.myColor.main,
             },
           }}
@@ -137,11 +145,38 @@ const Header3 = () => {
         onClose={toggleDrawer("top", false)}
         sx={{ ".MuiPaper-root": { height: "100%" } }}
       >
-        
-        <Box sx={{width:444,mx:"auto",my:6}}>
-          <IconButton onClick={toggleDrawer("top", false)}>
+        <Box
+          sx={{ width: 444, mx: "auto", my: 6, position: "relative", pt: 10 }}
+        >
+          <IconButton
+            sx={{ position: "absolute", top: 0, right: 0 }}
+            onClick={toggleDrawer("top", false)}
+          >
             <Close />
           </IconButton>
+          <Accordion elevation={0} sx={{ bgcolor: "initial" }}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography>Accordion 1</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <List>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemText primary="Trash" />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton component="a" href="#simple-list">
+                    <ListItemText primary="Spam" />
+                  </ListItemButton>
+                </ListItem>
+              </List>
+            </AccordionDetails>
+          </Accordion>
         </Box>
       </Drawer>
     </Container>
