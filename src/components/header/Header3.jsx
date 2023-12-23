@@ -1,33 +1,32 @@
 import {
-  Close,
-  ElectricBikeOutlined,
-  KeyboardArrowRightOutlined,
-  LaptopChromebookOutlined,
-  MenuBookOutlined,
-  SportsEsportsOutlined,
+    Close,
+    ElectricBikeOutlined,
+    KeyboardArrowRightOutlined,
+    LaptopChromebookOutlined,
+    MenuBookOutlined,
+    SportsEsportsOutlined,
 } from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuIcon from "@mui/icons-material/Menu";
 import WindowIcon from "@mui/icons-material/Window";
 import {
-  Box,
-  Button,
-  Container,
-  Drawer,
-  IconButton,
-  ListItemIcon,
-  ListItemText,
-  useTheme,
+    Box,
+    Button,
+    Container,
+    Drawer,
+    IconButton,
+    ListItemIcon,
+    ListItemText,
+    useTheme,
 } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Typography from "@mui/material/Typography";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
 import { useState } from "react";
 
 const Header3 = () => {
@@ -154,29 +153,32 @@ const Header3 = () => {
           >
             <Close />
           </IconButton>
-          <Accordion elevation={0} sx={{ bgcolor: "initial" }}>
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls="panel1a-content"
-              id="panel1a-header"
-            >
-              <Typography>Accordion 1</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <List>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemText primary="Trash" />
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton component="a" href="#simple-list">
-                    <ListItemText primary="Spam" />
-                  </ListItemButton>
-                </ListItem>
-              </List>
-            </AccordionDetails>
-          </Accordion>
+         {["aaa","bbb","ccc"].map((item)=>{
+            return(
+                <Accordion key={item} elevation={0} sx={{ bgcolor: "initial" }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <Typography>Accordion 1</Typography>
+                </AccordionSummary>
+                  <List sx={{py:0,my:0}}>
+                    <ListItem sx={{py:0,my:0}}>
+                      <ListItemButton>
+                        <ListItemText primary="Trash" />
+                      </ListItemButton>
+                    </ListItem>
+                    <ListItem>
+                      <ListItemButton component="a" href="#simple-list">
+                        <ListItemText primary="Spam" />
+                      </ListItemButton>
+                    </ListItem>
+                  </List>
+                
+              </Accordion>
+            );
+         })}
         </Box>
       </Drawer>
     </Container>
