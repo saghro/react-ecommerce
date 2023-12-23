@@ -1,23 +1,23 @@
 import {
-    Close,
-    ElectricBikeOutlined,
-    KeyboardArrowRightOutlined,
-    LaptopChromebookOutlined,
-    MenuBookOutlined,
-    SportsEsportsOutlined,
+  Close,
+  ElectricBikeOutlined,
+  KeyboardArrowRightOutlined,
+  LaptopChromebookOutlined,
+  MenuBookOutlined,
+  SportsEsportsOutlined,
 } from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuIcon from "@mui/icons-material/Menu";
 import WindowIcon from "@mui/icons-material/Window";
 import {
-    Box,
-    Button,
-    Container,
-    Drawer,
-    IconButton,
-    ListItemIcon,
-    ListItemText,
-    useTheme,
+  Box,
+  Button,
+  Container,
+  Drawer,
+  IconButton,
+  ListItemIcon,
+  ListItemText,
+  useTheme,
 } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -152,18 +152,34 @@ const Header3 = () => {
           sx={{ width: 444, mx: "auto", my: 6, position: "relative", pt: 10 }}
         >
           <IconButton
-            sx={{ position: "absolute", top: 0, right: 0 }}
+            sx={{ ":hover":{} position: "absolute", top: 0, right: 10 }}
             onClick={toggleDrawer("top", false)}
           >
             <Close />
           </IconButton>
           {[
-            { mainLink: "Home", subLink: ["Link1", "Link2", "Link3"] },
-            { mainLink: "Home2", subLink: ["Link1", "Link2", "Link3"] },
-            { mainLink: "Home3", subLink: ["Link1", "Link2", "Link3"] },
+            { mainLink: "Home", subLink: ["Link 1", "Link 2", "Link 3"] },
+            { mainLink: "Mega Menu", subLink: ["Link 1", "Link 2", "Link 3"] },
+            {
+              mainLink: "Full Screen Menu",
+              subLink: ["Link 1", "Link 2", "Link 3"],
+            },
+            { mainLink: "Pages", subLink: ["Link 1", "Link 2", "Link 3"] },
+            {
+              mainLink: "User Account",
+              subLink: ["Link 1", "Link 2", "Link 3"],
+            },
+            {
+              mainLink: "Vendor Account",
+              subLink: ["Link 1", "Link 2", "Link 3"],
+            },
           ].map((item) => {
             return (
-              <Accordion key={item.mainLink} elevation={0} sx={{ bgcolor: "initial" }}>
+              <Accordion
+                key={item.mainLink}
+                elevation={0}
+                sx={{ bgcolor: "initial" }}
+              >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
@@ -172,16 +188,15 @@ const Header3 = () => {
                   <Typography>{item.mainLink}</Typography>
                 </AccordionSummary>
                 <List sx={{ py: 0, my: 0 }}>
-                 {item.subLink.map((link)=>{
-                    return(
-                        <ListItem key={link} sx={{ py: 0, my: 0 }}>
+                  {item.subLink.map((link) => {
+                    return (
+                      <ListItem key={link} sx={{ py: 0, my: 0 }}>
                         <ListItemButton>
                           <ListItemText primary={link} />
                         </ListItemButton>
                       </ListItem>
-                    )
-                 })}
-                
+                    );
+                  })}
                 </List>
               </Accordion>
             );
