@@ -1,15 +1,23 @@
-import { ElectricBikeOutlined, KeyboardArrowRightOutlined } from "@mui/icons-material";
+import {
+  Close,
+  ElectricBikeOutlined,
+  KeyboardArrowRightOutlined,
+  LaptopChromebookOutlined,
+  MenuBookOutlined,
+  SportsEsportsOutlined,
+} from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import WindowIcon from "@mui/icons-material/Window";
 import {
-    Box,
-    Button,
-    Container,
-    IconButton,
-    ListItemIcon,
-    ListItemText,
-    Typography,
-    useTheme,
+  Box,
+  Button,
+  Container,
+  Drawer,
+  IconButton,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+  useTheme,
 } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -25,6 +33,24 @@ const Header3 = () => {
     setAnchorEl(null);
   };
   const theme = useTheme();
+
+  const [state, setState] = useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
   return (
     <Container
       sx={{
@@ -68,41 +94,56 @@ const Header3 = () => {
           MenuListProps={{
             "aria-labelledby": "basic-button",
           }}
+          sx={{
+            ".MuiPaper-root": {
+              width: 220,
+              bgcolor: theme.palette.myColor.main,
+            },
+          }}
         >
-          <MenuItem>
+          <MenuItem onClick={handleClose}>
             <ListItemIcon>
               <ElectricBikeOutlined fontSize="small" />
             </ListItemIcon>
-            <ListItemText>Profile</ListItemText>
-           
+            <ListItemText>Bikes</ListItemText>
           </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={handleClose}>
             <ListItemIcon>
-              <ElectricBikeOutlined fontSize="small" />
+              <LaptopChromebookOutlined fontSize="small" />
             </ListItemIcon>
-            <ListItemText>Profile</ListItemText>
-           
+            <ListItemText>Electronics</ListItemText>
           </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={handleClose}>
             <ListItemIcon>
-              <ElectricBikeOutlined fontSize="small" />
+              <MenuBookOutlined fontSize="small" />
             </ListItemIcon>
-            <ListItemText>Profile</ListItemText>
-           
+            <ListItemText>Books</ListItemText>
           </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={handleClose}>
             <ListItemIcon>
-              <ElectricBikeOutlined fontSize="small" />
+              <SportsEsportsOutlined fontSize="small" />
             </ListItemIcon>
-            <ListItemText>Profile</ListItemText>
-           
+            <ListItemText>Games</ListItemText>
           </MenuItem>
         </Menu>
       </Box>
 
-      <IconButton>
+      <IconButton onClick={toggleDrawer("top", true)}>
         <MenuIcon />
       </IconButton>
+      <Drawer
+        anchor={"top"}
+        open={state["top"]}
+        onClose={toggleDrawer("top", false)}
+        sx={{ ".MuiPaper-root": { height: "100%" } }}
+      >
+        
+        <Box sx={{width:444,mx:"auto",my:6}}>
+          <IconButton onClick={toggleDrawer("top", false)}>
+            <Close />
+          </IconButton>
+        </Box>
+      </Drawer>
     </Container>
   );
 };
