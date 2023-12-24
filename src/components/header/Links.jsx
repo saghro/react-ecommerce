@@ -1,12 +1,12 @@
 import { ExpandMore, KeyboardArrowRightOutlined } from "@mui/icons-material";
 import {
-  Box,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Paper,
-  Typography,
+    Box,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    Paper,
+    Typography,
 } from "@mui/material";
 
 const Links = () => {
@@ -52,7 +52,7 @@ const Links = () => {
               </ListItem>
               <ListItem
                 disablePadding
-                sx={{ "&:hover .sub-link": { display: "block" } }}
+                sx={{ "&:hover .sub-link": { display: "block" }, }}
               >
                 <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
                   <ListItemText
@@ -67,13 +67,14 @@ const Links = () => {
                   <Box flexGrow={1} />
                   <KeyboardArrowRightOutlined fontSize="small" />
                 </ListItemButton>
-                <Box>
-                  <Paper>
+                <Box className="sub-link" sx={{display:"none", position:"absolute" , top:0,left:"100%"}}>
+                  <Paper sx={{ml:1,minWidth:150}}>
                     <nav aria-label="secondary mailbox folders">
                       <List>
                         <ListItem disablePadding>
-                          <ListItemButton>
-                            <ListItemText primary="Trash" />
+                          <ListItemButton sx={{display:"flex",p:0,px:1.5}}>
+                            <ListItemText sx={{"& .MuiTypography-root":{fontSize:"15px",fontWeight:300},}} primary="Add Product" />
+                            <Box flexGrow={1}/>
                           </ListItemButton>
                         </ListItem>
                         <ListItem disablePadding>
