@@ -135,9 +135,9 @@ const Header3 = () => {
         </Menu>
       </Box>
 
-      <IconButton onClick={toggleDrawer("top", true)}>
+     {true && (  <IconButton onClick={toggleDrawer("top", true)}>
         <MenuIcon />
-      </IconButton>
+      </IconButton>)}
       <Drawer
         anchor={"top"}
         open={state["top"]}
@@ -152,7 +152,7 @@ const Header3 = () => {
           sx={{ width: 444, mx: "auto", my: 6, position: "relative", pt: 10 }}
         >
           <IconButton
-            sx={{ ":hover":{} position: "absolute", top: 0, right: 10 }}
+            sx={{ ":hover":{color:"red",rotate:"180deg", transition:"0.3s"}, position: "absolute", top: 0, right: 10 }}
             onClick={toggleDrawer("top", false)}
           >
             <Close />
