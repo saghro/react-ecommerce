@@ -1,12 +1,12 @@
 import { ExpandMore, KeyboardArrowRightOutlined } from "@mui/icons-material";
 import {
-    Box,
-    List,
-    ListItem,
-    ListItemButton,
-    ListItemText,
-    Paper,
-    Typography,
+  Box,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Paper,
+  Typography,
 } from "@mui/material";
 
 const Links = () => {
@@ -54,29 +54,64 @@ const Links = () => {
                 disablePadding
                 sx={{ "&:hover .sub-link": { display: "block" } }}
               >
-                <ListItemButton sx={{display:"flex",p:0,px:1.5}}>
+                <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
                   <ListItemText
-                    sx={{ ".MuiTypography-root": { fontSize: "15px",fontWeight:300 } }}
+                    sx={{
+                      ".MuiTypography-root": {
+                        fontSize: "15px",
+                        fontWeight: 300,
+                      },
+                    }}
                     primary="Products"
                   />
-                  <Box flexGrow={1}/>
-                  <KeyboardArrowRightOutlined fontSize="small"/>
+                  <Box flexGrow={1} />
+                  <KeyboardArrowRightOutlined fontSize="small" />
+                </ListItemButton>
+                <Box>
+                  <Paper>
+                    <nav aria-label="secondary mailbox folders">
+                      <List>
+                        <ListItem disablePadding>
+                          <ListItemButton>
+                            <ListItemText primary="Trash" />
+                          </ListItemButton>
+                        </ListItem>
+                        <ListItem disablePadding>
+                          <ListItemButton component="a" href="#simple-list">
+                            <ListItemText primary="Spam" />
+                          </ListItemButton>
+                        </ListItem>
+                      </List>
+                    </nav>
+                  </Paper>
+                </Box>
+              </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
+                  <ListItemText
+                    sx={{
+                      " & .MuiTypography-root": {
+                        fontSize: "15px",
+                        fontWeight: 300,
+                      },
+                    }}
+                    primary="Orders"
+                  />
+                  <Box flexGrow={1} />
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
-                <ListItemButton>
+                <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
                   <ListItemText
-                    sx={{ ".MuiTypography-root": { fontSize: "15px" } }}
-                    primary="Trash"
+                    sx={{
+                      " & .MuiTypography-root": {
+                        fontSize: "15px",
+                        fontWeight: 300,
+                      },
+                    }}
+                    primary="Profil"
                   />
-                </ListItemButton>
-              </ListItem>
-              <ListItem disablePadding>
-                <ListItemButton>
-                  <ListItemText
-                    sx={{ ".MuiTypography-root": { fontSize: "15px" } }}
-                    primary="Trash"
-                  />
+                  <Box flexGrow={1} />
                 </ListItemButton>
               </ListItem>
             </List>
