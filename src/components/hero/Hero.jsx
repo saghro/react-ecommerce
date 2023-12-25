@@ -1,22 +1,63 @@
-import { Box, Container } from "@mui/material";
-
+import { Box, Container, Link, Stack, Typography, } from "@mui/material";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Hero = () => {
-    return (
-        <Container sx={{mt:2.5,display:"flex",alignItems:"center"}}>
-            <Box>
-                Slider
-            </Box>
-            <Box>
-                <Box>
-                    <img src="" alt="" />
-                </Box>
-                <Box>
-                    <img src="" alt="" />
-                </Box>
-            </Box>
-        </Container>
-    );
-}
+  return (
+    <Container sx={{ mt: 2.5, display: "flex", alignItems: "center" }}>
+      <Box flexGrow={1}>Slider</Box>
+      <Box>
+        <Box sx={{ position: "relative" }}>
+          <img src="src/images/banner-17.jpg" alt="" />
+          <Stack sx={{ position: "absolute", top: 0 }}>
+            <Typography
+              variant="caption"
+              sx={{ color: "#2B3445", fontSize: "18px" }}
+            >
+              NEW ARRIVALS
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                color: "#2B3445",
+                lineHeight: "16px",
+                mt: 1,
+              }}
+            >
+              SUMMER
+            </Typography>
+            <Typography 
+            variant="h6"
+            sx={{
+                color:"#2B3445"
+            }}
+            >
+              SALE 20% OFF
+            </Typography>
+            <Link
+              sx={{
+                color:"#2B3445",
+                display:"flex",
+                alignItems:"center",
+                gap:"5px",
+                transition:"0.2s",
+                "&:hover":{
+                    color:"#D23F57",
+                },
+              }}
+              href="#"
+              underline="none"
+            >
+            shop now
+            <ArrowForwardIcon sx={{fontSize:"13px"}} />
+            </Link>
+          </Stack>
+        </Box>
+        <Box>
+          <img src="src/images/banner-16.jpg" alt="" />
+        </Box>
+      </Box>
+    </Container>
+  );
+};
 
 export default Hero;
