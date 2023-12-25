@@ -17,6 +17,7 @@ import {
     IconButton,
     ListItemIcon,
     ListItemText,
+    Stack,
     useMediaQuery,
     useTheme,
 } from "@mui/material";
@@ -137,10 +138,19 @@ const Header3 = () => {
           </MenuItem>
         </Menu>
       </Box>
-      <Links/>
-      <Links/>
-      <Links/>
-      <Links/>
+
+     {useMediaQuery('(min-width:1000px)') && (
+        <Stack gap={4} direction={"row"} alignItems={"center"} >
+             <Links title={"Home"} />
+             <Links title={"Mega Menu"}/>
+             <Links title={"Full Screen Menu"}/>
+             <Links title={"Pages"}/>
+             <Links title={"User Account"}/>
+             <Links title={"Vendor Account"}/>
+
+        </Stack>
+     )}
+     
      {useMediaQuery('(max-width:1000px)') && (  <IconButton onClick={toggleDrawer("top", true)}>
         <MenuIcon />
       </IconButton>)}

@@ -9,7 +9,7 @@ import {
     Typography,
 } from "@mui/material";
 
-const Links = () => {
+const Links = ({title}) => {
   return (
     <Box
       sx={{
@@ -20,7 +20,7 @@ const Links = () => {
         alignItems: "center",
       }}
     >
-      <Typography variant="body1">Home</Typography>
+      <Typography variant="body1">{title}</Typography>
       <ExpandMore sx={{ fontSize: "16px", ml: 1 }} />
 
       <Box
