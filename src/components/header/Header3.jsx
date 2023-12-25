@@ -1,25 +1,25 @@
 import {
-    Close,
-    ElectricBikeOutlined,
-    KeyboardArrowRightOutlined,
-    LaptopChromebookOutlined,
-    MenuBookOutlined,
-    SportsEsportsOutlined,
+  Close,
+  ElectricBikeOutlined,
+  KeyboardArrowRightOutlined,
+  LaptopChromebookOutlined,
+  MenuBookOutlined,
+  SportsEsportsOutlined,
 } from "@mui/icons-material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuIcon from "@mui/icons-material/Menu";
 import WindowIcon from "@mui/icons-material/Window";
 import {
-    Box,
-    Button,
-    Container,
-    Drawer,
-    IconButton,
-    ListItemIcon,
-    ListItemText,
-    Stack,
-    useMediaQuery,
-    useTheme,
+  Box,
+  Button,
+  Container,
+  Drawer,
+  IconButton,
+  ListItemIcon,
+  ListItemText,
+  Stack,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -66,7 +66,7 @@ const Header3 = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        mt:5,
+        mt: 5,
       }}
     >
       <Box>
@@ -139,21 +139,22 @@ const Header3 = () => {
         </Menu>
       </Box>
 
-     {useMediaQuery('(min-width:1000px)') && (
-        <Stack gap={4} direction={"row"} alignItems={"center"} >
-             <Links title={"Home"} />
-             <Links title={"Mega Menu"}/>
-             <Links title={"Full Screen Menu"}/>
-             <Links title={"Pages"}/>
-             <Links title={"User Account"}/>
-             <Links title={"Vendor Account"}/>
-
+      {useMediaQuery("(min-width:1200px)") && (
+        <Stack gap={4} direction={"row"} alignItems={"center"}>
+          <Links title={"Home"} />
+          <Links title={"Mega Menu"} />
+          <Links title={"Full Screen Menu"} />
+          <Links title={"Pages"} />
+          <Links title={"User Account"} />
+          <Links title={"Vendor Account"} />
         </Stack>
-     )}
-     
-     {useMediaQuery('(max-width:1000px)') && (  <IconButton onClick={toggleDrawer("top", true)}>
-        <MenuIcon />
-      </IconButton>)}
+      )}
+
+      {useMediaQuery("(max-width:1200px)") && (
+        <IconButton onClick={toggleDrawer("top", true)}>
+          <MenuIcon />
+        </IconButton>
+      )}
       <Drawer
         anchor={"top"}
         open={state["top"]}
@@ -168,7 +169,12 @@ const Header3 = () => {
           sx={{ width: 444, mx: "auto", my: 6, position: "relative", pt: 10 }}
         >
           <IconButton
-            sx={{ ":hover":{color:"red",rotate:"180deg", transition:"0.3s"}, position: "absolute", top: 0, right: 10 }}
+            sx={{
+              ":hover": { color: "red", rotate: "180deg", transition: "0.3s" },
+              position: "absolute",
+              top: 0,
+              right: 10,
+            }}
             onClick={toggleDrawer("top", false)}
           >
             <Close />
