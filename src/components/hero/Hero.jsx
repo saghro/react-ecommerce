@@ -1,11 +1,14 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Box, Button, Container, Link, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Link, Stack, Typography, useTheme } from "@mui/material";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./slider.css";
-import { useTheme } from "styled-components";
+const mySlider=[
+    {text:"MEN",link:"src/images/banner-15.jpg"},
+    {text:"WOMEN", link:"src/images/banner-25.jpg" }
+]
 const Hero = () => {
   const theme = useTheme();
   return (
@@ -17,82 +20,87 @@ const Hero = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide className="parent-slider">
-          <img src="src/images/banner-15.jpg" alt="" />
-          <Box
-              sx={{
-                [theme.breakpoints.up("sm")]:{
-                    position:"absolute",left:"10%",textAlign:"left"
-                },
-                [theme.breakpoints.down("sm")]:{
-                  pt:4,
-                  pb:6
-                }
-              }}
-          >
-            
-            <Typography
-              sx={{
-                color: "#222",
-              }}
-              variant="h5"
-            >
-              LIFESTYLE COLLECTION
-            </Typography>
-            <Typography
-              sx={{
-                color: "#222",
-                fontWeight: 400,
-                my: 1,
-              }}
-              variant="h3"
-            >
-              MEN
-            </Typography>
-            <Stack
-              sx={{
-                justifyContent: "center",
-              }}
-              direction={"row"}
-              alignItems={"center"}
-            >
-              <Typography color={"#333"} mr={1} variant="h4">
-                SALE UP TO
-              </Typography>
-              <Typography color={"#D23F57"} variant="h4">
-                30% OF
-              </Typography>
-            </Stack>
-            <Typography
-              sx={{
-                color: "#000",
-                fontWeight: 300,
-                my: 1,
-              }}
-              variant="body1"
-            >
-              Get free Shipping on orders over $99.00
-            </Typography>
-            <Button
-              sx={{
-                px: 5,
-                py: 1,
-                mt: 2,
-                backgroundColor: "#222",
-                boxShadow: "0px 4px 16px rgba(43,52,69,0.1)",
-                color: "#fff",
-                borderRadius: "1px",
-                "&:hover": {
-                  bgcolor: "#151515",
-                  boxShadow: "0px 4px 16px rgba(43 ,52 ,69 ,0.1)",
-                },
-              }}
-              variant="contained"
-            >
-              Shop Now
-            </Button>
-          </Box>
-        </SwiperSlide>
+        {mySlider.map((item)=>{
+            return(
+                <SwiperSlide key={item.link} className="parent-slider">
+                <img src={item.link} alt="" />
+                <Box
+                    sx={{
+                      [theme.breakpoints.up("sm")]:{
+                          position:"absolute",left:"10%",textAlign:"left"
+                      },
+                      [theme.breakpoints.down("sm")]:{
+                        pt:4,
+                        pb:6
+                      }
+                    }}
+                >
+                  
+                  <Typography
+                    sx={{
+                      color: "#222",
+                    }}
+                    variant="h5"
+                  >
+                    LIFESTYLE COLLECTION
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: "#222",
+                      fontWeight: 400,
+                      my: 1,
+                    }}
+                    variant="h3"
+                  >
+                    {item.text}
+                  </Typography>
+                  <Stack
+                    sx={{
+                      justifyContent: "center",
+                    }}
+                    direction={"row"}
+                    alignItems={"center"}
+                  >
+                    <Typography color={"#333"} mr={1} variant="h4">
+                      SALE UP TO
+                    </Typography>
+                    <Typography color={"#D23F57"} variant="h4">
+                      30% OF
+                    </Typography>
+                  </Stack>
+                  <Typography
+                    sx={{
+                      color: "#000",
+                      fontWeight: 300,
+                      my: 1,
+                    }}
+                    variant="body1"
+                  >
+                    Get free Shipping on orders over $99.00
+                  </Typography>
+                  <Button
+                    sx={{
+                      px: 5,
+                      py: 1,
+                      mt: 2,
+                      backgroundColor: "#222",
+                      boxShadow: "0px 4px 16px rgba(43,52,69,0.1)",
+                      color: "#fff",
+                      borderRadius: "1px",
+                      "&:hover": {
+                        bgcolor: "#151515",
+                        boxShadow: "0px 4px 16px rgba(43 ,52 ,69 ,0.1)",
+                      },
+                    }}
+                    variant="contained"
+                  >
+                    Shop Now
+                  </Button>
+                </Box>
+              </SwiperSlide>
+            )
+        })}
+       
       </Swiper>
 
       <Box sx={{ display: { xs: "none", md: "block", minWidth: "26.6%" } }}>
