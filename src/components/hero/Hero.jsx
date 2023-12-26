@@ -1,33 +1,62 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Container, Link, Stack, Typography } from "@mui/material";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import './slider.css';
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "./slider.css";
 const Hero = () => {
   return (
-    <Container sx={{ mt: 2.5, display: "flex", alignItems: "center",gap:2 }}>
-      
-        <Swiper
-          pagination={{
-            dynamicBullets: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <img src="src/images/banner-15.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="src/images/banner-25.jpg" alt="" />
-          </SwiperSlide>
-        
-        </Swiper>
-      
-      <Box sx={{ display: { xs: "none", md: "block" , minWidth:"26.6%" } }}>
+    <Container sx={{ mt: 2.5, display: "flex", alignItems: "center", gap: 2 }}>
+      <Swiper
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src="src/images/banner-15.jpg" alt="" />
+          <Box sx={{ position: "absolute ", left: "10%" }}>
+            <Typography
+              sx={{
+                color: "#222",
+              }}
+              variant="h5"
+            >
+              LIFESTYLE COLLECTION
+            </Typography>
+            <Typography
+              sx={{
+                color: "#222",
+                fontWeight: 400,
+                my: 1,
+              }}
+            >
+              MEN
+            </Typography>
+            <Stack
+             sx={{ 
+                justifyContent: "center",
+                }}
+                direction={"row"}
+                alignItems={"center"}
+                >
+               <Typography
+                 color={"#333"} mr={1} variant="h4">
+                SALE UP TO
+                </Typography>
+                <Typography color={"#D23F57"} variant="h4">
+                    30% OF
+                    </Typography>     
+            </Stack>
+          </Box>
+        </SwiperSlide>
+      </Swiper>
+
+      <Box sx={{ display: { xs: "none", md: "block", minWidth: "26.6%" } }}>
         <Box sx={{ position: "relative" }}>
-          <img  width={"100%"} src="src/images/banner-17.jpg" alt="" />
+          <img width={"100%"} src="src/images/banner-17.jpg" alt="" />
           <Stack
             sx={{
               position: "absolute",
