@@ -5,7 +5,9 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./slider.css";
+import { useTheme } from "styled-components";
 const Hero = () => {
+  const theme = useTheme();
   return (
     <Container sx={{ mt: 2.5, display: "flex", alignItems: "center", gap: 2 }}>
       <Swiper
@@ -15,9 +17,20 @@ const Hero = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide className="parent-slider">
           <img src="src/images/banner-15.jpg" alt="" />
-          <Box sx={{ position: "absolute ", left: "10%",textAlign:"left" }}>
+          <Box
+              sx={{
+                [theme.breakpoints.up("sm")]:{
+                    position:"absolute",left:"10%",textAlign:"left"
+                },
+                [theme.breakpoints.down("sm")]:{
+                  pt:4,
+                  pb:6
+                }
+              }}
+          >
+            
             <Typography
               sx={{
                 color: "#222",
@@ -51,30 +64,30 @@ const Hero = () => {
               </Typography>
             </Stack>
             <Typography
-               sx={{
-                color:"#000",
-                fontWeight:300,
-                my:1
-               }}
-               variant="body1"
+              sx={{
+                color: "#000",
+                fontWeight: 300,
+                my: 1,
+              }}
+              variant="body1"
             >
-                Get free Shipping on orders over $99.00
+              Get free Shipping on orders over $99.00
             </Typography>
             <Button
-            sx={{
-                px:5,
-                py:1,
-                mt:2,
-                backgroundColor:"#222",
-                boxShadow:"0px 4px 16px rgba(43,52,69,0.1)",
-                color:"#fff",
-                borderRadius:"1px",
-                "&:hover":{
-                    bgcolor:"#151515",
-                    boxShadow:"0px 4px 16px rgba(43 ,52 ,69 ,0.1)",
+              sx={{
+                px: 5,
+                py: 1,
+                mt: 2,
+                backgroundColor: "#222",
+                boxShadow: "0px 4px 16px rgba(43,52,69,0.1)",
+                color: "#fff",
+                borderRadius: "1px",
+                "&:hover": {
+                  bgcolor: "#151515",
+                  boxShadow: "0px 4px 16px rgba(43 ,52 ,69 ,0.1)",
                 },
-            }}
-            variant="contained"
+              }}
+              variant="contained"
             >
               Shop Now
             </Button>
