@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import './slider.css';
 const Hero = () => {
   return (
-    <Container sx={{ mt: 2.5, display: "flex", alignItems: "center" }}>
+    <Container sx={{ mt: 2.5, display: "flex", alignItems: "center",gap:2 }}>
       
         <Swiper
           pagination={{
@@ -19,12 +19,15 @@ const Hero = () => {
           <SwiperSlide>
             <img src="src/images/banner-15.jpg" alt="" />
           </SwiperSlide>
+          <SwiperSlide>
+            <img src="src/images/banner-25.jpg" alt="" />
+          </SwiperSlide>
         
         </Swiper>
       
-      <Box sx={{ display: { xs: "none", md: "block" } }}>
+      <Box sx={{ display: { xs: "none", md: "block" , minWidth:"26.6%" } }}>
         <Box sx={{ position: "relative" }}>
-          <img src="src/images/banner-17.jpg" alt="" />
+          <img  width={"100%"} src="src/images/banner-17.jpg" alt="" />
           <Stack
             sx={{
               position: "absolute",
@@ -77,7 +80,7 @@ const Hero = () => {
           </Stack>
         </Box>
         <Box sx={{ position: "relative" }}>
-          <img src="src/images/banner-16.jpg" alt="" />
+          <img width={"100%"} src="src/images/banner-16.jpg" alt="" />
           <Stack
             sx={{
               position: "absolute",
