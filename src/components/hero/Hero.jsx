@@ -1,5 +1,5 @@
-import { Box, Container, Link, Stack, Typography, } from "@mui/material";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Box, Container, Link, Stack, Typography } from "@mui/material";
 
 const Hero = () => {
   return (
@@ -8,7 +8,14 @@ const Hero = () => {
       <Box>
         <Box sx={{ position: "relative" }}>
           <img src="src/images/banner-17.jpg" alt="" />
-          <Stack sx={{ position: "absolute", top: 0 }}>
+          <Stack
+            sx={{
+              position: "absolute",
+              top: "50%",
+              transform: "translateY(-50%)",
+              left: 31,
+            }}
+          >
             <Typography
               variant="caption"
               sx={{ color: "#2B3445", fontSize: "18px" }}
@@ -25,35 +32,85 @@ const Hero = () => {
             >
               SUMMER
             </Typography>
-            <Typography 
-            variant="h6"
-            sx={{
-                color:"#2B3445"
-            }}
+            <Typography
+              variant="h6"
+              sx={{
+                color: "#2B3445",
+              }}
             >
               SALE 20% OFF
             </Typography>
             <Link
               sx={{
-                color:"#2B3445",
-                display:"flex",
-                alignItems:"center",
-                gap:"5px",
-                transition:"0.2s",
-                "&:hover":{
-                    color:"#D23F57",
+                color: "#2B3445",
+                display: "flex",
+                alignItems: "center",
+                gap: "5px",
+                transition: "0.2s",
+                "&:hover": {
+                  color: "#D23F57",
                 },
               }}
               href="#"
               underline="none"
             >
-            shop now
-            <ArrowForwardIcon sx={{fontSize:"13px"}} />
+              shop now
+              <ArrowForwardIcon sx={{ fontSize: "13px" }} />
             </Link>
           </Stack>
         </Box>
         <Box>
           <img src="src/images/banner-16.jpg" alt="" />
+          <Stack
+            sx={{
+              position: "absolute",
+              top: "50%",
+              transform: "translateY(-50%)",
+              left: 31,
+            }}
+          >
+            <Typography
+              variant="caption"
+              sx={{ color: "#2B3445", fontSize: "18px" }}
+            >
+              NEW ARRIVALS
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                color: "#2B3445",
+                lineHeight: "16px",
+                mt: 1,
+              }}
+            >
+              SUMMER
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                color: "#2B3445",
+              }}
+            >
+              SALE 20% OFF
+            </Typography>
+            <Link
+              sx={{
+                color: "#2B3445",
+                display: "flex",
+                alignItems: "center",
+                gap: "5px",
+                transition: "0.2s",
+                "&:hover": {
+                  color: "#D23F57",
+                },
+              }}
+              href="#"
+              underline="none"
+            >
+              shop now
+              <ArrowForwardIcon sx={{ fontSize: "13px" }} />
+            </Link>
+          </Stack>
         </Box>
       </Box>
     </Container>
