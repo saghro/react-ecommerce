@@ -1,5 +1,5 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Box, Container, Link, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Link, Stack, Typography } from "@mui/material";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
@@ -36,20 +36,47 @@ const Hero = () => {
               MEN
             </Typography>
             <Stack
-             sx={{ 
+              sx={{
                 justifyContent: "center",
-                }}
-                direction={"row"}
-                alignItems={"center"}
-                >
-               <Typography
-                 color={"#333"} mr={1} variant="h4">
+              }}
+              direction={"row"}
+              alignItems={"center"}
+            >
+              <Typography color={"#333"} mr={1} variant="h4">
                 SALE UP TO
-                </Typography>
-                <Typography color={"#D23F57"} variant="h4">
-                    30% OF
-                    </Typography>     
+              </Typography>
+              <Typography color={"#D23F57"} variant="h4">
+                30% OF
+              </Typography>
             </Stack>
+            <Typography
+               sx={{
+                color:"#000",
+                fontWeight:300,
+                my:1
+               }}
+               variant="body1"
+            >
+                Get free Shipping on orders over $99.00
+            </Typography>
+            <Button
+            sx={{
+                px:5,
+                py:1,
+                mt:2,
+                backgroundColor:"#222",
+                boxShadow:"0px 4px 16px rgba(43,52,69,0.1)",
+                color:"#fff",
+                borderRadius:"1px",
+                "&:hover":{
+                    bgcolor:"#151515",
+                    boxShadow:"0px 4px 16px rgba(43 ,52 ,69 ,0.1)",
+                },
+            }}
+            variant="contained"
+            >
+              Shop Now
+            </Button>
           </Box>
         </SwiperSlide>
       </Swiper>
