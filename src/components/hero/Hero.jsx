@@ -17,7 +17,7 @@ const Hero = () => {
       >
         <SwiperSlide>
           <img src="src/images/banner-15.jpg" alt="" />
-          <Box sx={{ position: "absolute ", left: "10%" }}>
+          <Box sx={{ position: "absolute ", left: "10%",textAlign:"left" }}>
             <Typography
               sx={{
                 color: "#222",
@@ -32,6 +32,7 @@ const Hero = () => {
                 fontWeight: 400,
                 my: 1,
               }}
+              variant="h3"
             >
               MEN
             </Typography>
