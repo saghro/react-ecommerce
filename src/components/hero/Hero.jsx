@@ -1,11 +1,28 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Container, Link, Stack, Typography } from "@mui/material";
-
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import './slider.css';
 const Hero = () => {
   return (
     <Container sx={{ mt: 2.5, display: "flex", alignItems: "center" }}>
-      <Box flexGrow={1}>Slider</Box>
-      <Box>
+      
+        <Swiper
+          pagination={{
+            dynamicBullets: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <img src="src/images/banner-15.jpg" alt="" />
+          </SwiperSlide>
+        
+        </Swiper>
+      
+      <Box sx={{ display: { xs: "none", md: "block" } }}>
         <Box sx={{ position: "relative" }}>
           <img src="src/images/banner-17.jpg" alt="" />
           <Stack
@@ -59,7 +76,7 @@ const Hero = () => {
             </Link>
           </Stack>
         </Box>
-        <Box>
+        <Box sx={{ position: "relative" }}>
           <img src="src/images/banner-16.jpg" alt="" />
           <Stack
             sx={{
@@ -71,9 +88,9 @@ const Hero = () => {
           >
             <Typography
               variant="caption"
-              sx={{ color: "#2B3445", fontSize: "18px" }}
+              sx={{ color: "#2B3445", fontSize: "18px", fontWeight: 300 }}
             >
-              NEW ARRIVALS
+              GAMING 4K
             </Typography>
             <Typography
               variant="h6"
@@ -83,7 +100,7 @@ const Hero = () => {
                 mt: 1,
               }}
             >
-              SUMMER
+              DESKTOPS &
             </Typography>
             <Typography
               variant="h6"
@@ -91,7 +108,7 @@ const Hero = () => {
                 color: "#2B3445",
               }}
             >
-              SALE 20% OFF
+              LAPTOPS
             </Typography>
             <Link
               sx={{
