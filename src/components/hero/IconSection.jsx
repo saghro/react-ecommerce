@@ -12,8 +12,9 @@ import {
     useTheme,
 } from "@mui/material";
 const IconSection = () => {
+    const theme=useTheme()
   return (
-    <Container sx={{ bgcolor: "#000" }}>
+    <Container sx={{ mt:3 , bgcolor: theme.palette.mode==="dark" ?"#000": "#fff" }}>
       <Stack
         divider={useMediaQuery('(min-width:600)')? <Divider orientation="vertical" flexItem />:null}
         sx={{ flexWrap: "wrap" }}
@@ -57,8 +58,8 @@ const MyBox = ({ icon, title, subTitle }) => {
         flexGrow: 1,
         alignItems: "center",
         gap: 3,
-        justifyContent: "center",
         py: 1.6,
+        justifyContent:useMediaQuery('(min-width:600)')? "center":"left"
       }}
     >
       {icon}
