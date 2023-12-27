@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./slider.css";
+import IconSection from "./IconSection";
 const mySlider=[
     {text:"MEN",link:"src/images/banner-15.jpg"},
     {text:"WOMEN", link:"src/images/banner-25.jpg" }
@@ -12,8 +13,9 @@ const mySlider=[
 const Hero = () => {
   const theme = useTheme();
   return (
-    <Container sx={{ mt: 2.5, display: "flex", alignItems: "center", gap: 2 }}>
-      <Swiper
+    <Container >
+     <Box sx={{ mt: 2.5, display: "flex", alignItems: "center", gap: 2 }}>
+     <Swiper
         loop={true}
         pagination={{
           dynamicBullets: true,
@@ -212,6 +214,8 @@ const Hero = () => {
           </Stack>
         </Box>
       </Box>
+     </Box>
+     <IconSection/>
     </Container>
   );
 };

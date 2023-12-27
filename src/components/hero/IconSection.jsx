@@ -1,31 +1,44 @@
-import { Box, Container, Stack, useTheme, Typography } from "@mui/material";
-import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
-import CreditScoreOutlinedIcon from "@mui/icons-material/CreditScoreOutlined";
-import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import AccessAlarmOutlinedIcon from "@mui/icons-material/AccessAlarmOutlined";
+import CreditScoreOutlinedIcon from "@mui/icons-material/CreditScoreOutlined";
+import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
+import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
+import {
+    Box,
+    Container,
+    Divider,
+    Stack,
+    Typography,
+    useMediaQuery,
+    useTheme,
+} from "@mui/material";
 const IconSection = () => {
   return (
-    <Container>
-      <Stack direction={"row"}>
+    <Container sx={{ bgcolor: "#000" }}>
+      <Stack
+        divider={useMediaQuery('(min-width:600)')? <Divider orientation="vertical" flexItem />:null}
+        sx={{ flexWrap: "wrap" }}
+        direction={"row"}
+        alignItems={"center"}
+      >
         <MyBox
-          icon={<ElectricBoltIcon />}
-          title={undefined}
-          subTitle={undefined}
+          icon={<ElectricBoltIcon fontSize="large" />}
+          title={"Fast Delivery"}
+          subTitle={"Start from $10"}
         />
         <MyBox
-          icon={<WorkspacePremiumOutlinedIcon />}
-          title={undefined}
-          subTitle={undefined}
+          icon={<WorkspacePremiumOutlinedIcon fontSize="large" />}
+          title={"Money Guarantee"}
+          subTitle={"7 Days Back"}
         />
         <MyBox
-          icon={<AccessAlarmOutlinedIcon />}
-          title={undefined}
-          subTitle={undefined}
+          icon={<AccessAlarmOutlinedIcon fontSize="large" />}
+          title={"365 Days"}
+          subTitle={"For free return"}
         />
         <MyBox
-          icon={<CreditScoreOutlinedIcon />}
-          title={undefined}
-          subTitle={undefined}
+          icon={<CreditScoreOutlinedIcon fontSize="large" />}
+          title={"Payement"}
+          subTitle={"Secure System"}
         />
       </Stack>
     </Container>
@@ -37,7 +50,17 @@ export default IconSection;
 const MyBox = ({ icon, title, subTitle }) => {
   const theme = useTheme();
   return (
-    <Box>
+    <Box
+      sx={{
+        width: 250,
+        display: "flex",
+        flexGrow: 1,
+        alignItems: "center",
+        gap: 3,
+        justifyContent: "center",
+        py: 1.6,
+      }}
+    >
       {icon}
       <Box>
         <Typography variant="body1">{title}</Typography>
