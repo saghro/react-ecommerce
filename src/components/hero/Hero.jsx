@@ -14,6 +14,7 @@ const Hero = () => {
   return (
     <Container sx={{ mt: 2.5, display: "flex", alignItems: "center", gap: 2 }}>
       <Swiper
+        loop={true}
         pagination={{
           dynamicBullets: true,
         }}
@@ -56,7 +57,7 @@ const Hero = () => {
                   </Typography>
                   <Stack
                     sx={{
-                      justifyContent: "center",
+                      justifyContent:{xs:"center",sm:"left"},
                     }}
                     direction={"row"}
                     alignItems={"center"}
