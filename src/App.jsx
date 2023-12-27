@@ -1,12 +1,12 @@
-import { Box, CssBaseline, ThemeProvider, useTheme } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Header1 from "./components/header/Header1";
 import Header2 from "./components/header/Header2";
 import Header3 from "./components/header/Header3";
 import Hero from "./components/hero/Hero";
-import { ColorModeContext, useMode } from "./theme";
 import Main from "./components/main/Main";
- const theme=useTheme()
+import { ColorModeContext, useMode } from "./theme";
+
 function App() {
   const [theme, colorMode] = useMode();
   return (
