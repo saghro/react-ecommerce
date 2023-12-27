@@ -16,7 +16,10 @@ const Main = () => {
   
   return (
     <Container>
-      <Stack>
+      <Stack direction={"row"}
+      alignItems={"center"}
+       justifyContent={"space-between"}
+      >
         <Box>
           <Typography variant="h6">Selected Products</Typography>
           <Typography fontWeight={300} variant="body1">
@@ -24,23 +27,22 @@ const Main = () => {
           </Typography>
         </Box>
         <ToggleButtonGroup
+          color="error"
           value={alignment}
           exclusive
           onChange={handleAlignment}
           aria-label="text alignment"
         >
-          <ToggleButton value="left" aria-label="left aligned">
-            <FormatAlignLeftIcon />
+          <ToggleButton className="myButton" value="left" aria-label="left aligned">
+            All Products
           </ToggleButton>
-          <ToggleButton value="center" aria-label="centered">
-            <FormatAlignCenterIcon />
+          <ToggleButton className="myButton" value="center" aria-label="centered">
+            Men Category
           </ToggleButton>
-          <ToggleButton value="right" aria-label="right aligned">
-            <FormatAlignRightIcon />
+          <ToggleButton className="myButton" value="right" aria-label="right aligned">
+            Women Category
           </ToggleButton>
-          <ToggleButton value="justify" aria-label="justified" disabled>
-            <FormatAlignJustifyIcon />
-          </ToggleButton>
+         
         </ToggleButtonGroup>
       </Stack>
     </Container>
