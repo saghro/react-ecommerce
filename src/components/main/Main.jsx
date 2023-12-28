@@ -32,11 +32,18 @@ const Main = () => {
           exclusive
           onChange={handleAlignment}
           aria-label="text alignment"
+          sx={{
+            ".Mui-selected":{
+              border:"1px solid rgba(233,69,96,0.5) !important",
+              color:"#e94560",
+              backgroundColor:"initial"
+            }
+          }}
         >
           <ToggleButton className="myButton" value="left" aria-label="left aligned">
             All Products
           </ToggleButton>
-          <ToggleButton className="myButton" value="center" aria-label="centered">
+          <ToggleButton sx={{mx:"16px !important"}} className="myButton" value="center" aria-label="centered">
             Men Category
           </ToggleButton>
           <ToggleButton className="myButton" value="right" aria-label="right aligned">

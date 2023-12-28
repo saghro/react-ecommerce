@@ -3,7 +3,10 @@
 *{
   font-family: 'Open Sans', sans-serif;
 }
-
+.logo{
+  width: 200px;
+  margin-top: -20px;
+}
 .myButton{
   border-radius: 5px !important;
   border: 1px solid #888 !important;

@@ -1,4 +1,4 @@
-import { ExpandMore, ShoppingCartOutlined } from "@mui/icons-material";
+import { ExpandMore } from "@mui/icons-material";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -8,7 +8,6 @@ import {
   IconButton,
   InputBase,
   Stack,
-  Typography,
   styled,
   useTheme
 } from "@mui/material";
@@ -91,10 +90,9 @@ const Header2 = () => {
   };
   const theme = useTheme();
   return (
-    <Container sx={{ my: 3, display: "flex", justifyContent: "space-between" }}>
+    <Container sx={{ my: 3, display: "flex", justifyContent: "space-between" ,}}>
       <Stack alignItems={"center"}>
-        <ShoppingCartOutlined />
-        <Typography variant="body2"> AGAFAY STORE</Typography>
+        <img className ="logo" src="src\images\logo.jpg" alt="" />
       </Stack>
       <Search
         sx={{
@@ -104,7 +102,7 @@ const Header2 = () => {
         }}
       >
         <SearchIconWrapper>
-          <SearchIcon />
+          <SearchIcon  />
         </SearchIconWrapper>
         <StyledInputBase
           placeholder="Search…"
