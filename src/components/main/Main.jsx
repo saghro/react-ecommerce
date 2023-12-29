@@ -27,7 +27,7 @@ const Main = () => {
     setAlignment(newAlignment);
   };
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
