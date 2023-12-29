@@ -18,6 +18,7 @@ import CardMedia from "@mui/material/CardMedia";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import React from "react";
+import ProductDetails from "./ProductDetails";
 
 const Main = () => {
   const [alignment, setAlignment] = React.useState("left");
@@ -165,7 +166,7 @@ const Main = () => {
         >
           <Close />
         </IconButton>
-        
+        <ProductDetails/>
       </Dialog>
     </Container>
   );
