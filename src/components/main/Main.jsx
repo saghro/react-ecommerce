@@ -1,7 +1,10 @@
+import { Close } from "@mui/icons-material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import {
   Box,
   Container,
+  Dialog,
+  IconButton,
   Rating,
   Stack,
   Typography,
@@ -23,8 +26,17 @@ const Main = () => {
     setAlignment(newAlignment);
   };
   const theme = useTheme();
+  const [open, setOpen] = React.useState(true);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
-    <Container sx={{py:9}}>
+    <Container sx={{ py: 9 }}>
       <Stack
         direction={"row"}
         alignItems={"center"}
@@ -83,7 +95,7 @@ const Main = () => {
         flexWrap={"wrap"}
         justifyContent={"space-between"}
       >
-        {["aaa", "bbb",].map((item) => {
+        {["aaa", "bbb"].map((item) => {
           return (
             <Card
               key={item}
@@ -121,7 +133,11 @@ const Main = () => {
                 </Typography>
               </CardContent>
               <CardActions sx={{ justifyContent: "space-between" }}>
-                <Button sx={{ textTransform: "capitalize" }} size="large">
+                <Button
+                  onClick={handleClickOpen}
+                  sx={{ textTransform: "capitalize" }}
+                  size="large"
+                >
                   <AddShoppingCartIcon sx={{ mr: 1 }} fontSize="small" />
                   Add To Cart
                 </Button>
@@ -131,6 +147,26 @@ const Main = () => {
           );
         })}
       </Stack>
+      <Dialog
+        sx={{ ".MuiPaper-root": { minWidth: { xs: "100%", md: 800 } } }}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <IconButton
+          sx={{
+            ":hover": { color: "red", rotate: "180deg", transition: "0.3s" },
+            position: "absolute",
+            top: 0,
+            right: 10,
+          }}
+          onClick={handleClose}
+        >
+          <Close />
+        </IconButton>
+        
+      </Dialog>
     </Container>
   );
 };
