@@ -1,5 +1,6 @@
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import Footer from "./components/footer/Footer";
 import Header1 from "./components/header/Header1";
 import Header2 from "./components/header/Header2";
 import Header3 from "./components/header/Header3";
@@ -29,7 +30,7 @@ function App() {
         <Hero/>
         <Main/>
         </Box>
-       
+        <Footer/>
         <Outlet />
       </ThemeProvider>
     </ColorModeContext.Provider>

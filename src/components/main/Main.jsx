@@ -1,12 +1,20 @@
-import { Box, Container, Stack, Typography, useTheme } from "@mui/material";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import {
+  Box,
+  Container,
+  Rating,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import React from "react";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 
 const Main = () => {
   const [alignment, setAlignment] = React.useState("left");
@@ -16,7 +24,7 @@ const Main = () => {
   };
   const theme = useTheme();
   return (
-    <Container>
+    <Container sx={{py:9}}>
       <Stack
         direction={"row"}
         alignItems={"center"}
@@ -70,27 +78,58 @@ const Main = () => {
           </ToggleButton>
         </ToggleButtonGroup>
       </Stack>
-      <Stack>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            sx={{ height: 140 }}
-            image="/static/images/cards/contemplative-reptile.jpg"
-            title="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
+      <Stack
+        direction={"row"}
+        flexWrap={"wrap"}
+        justifyContent={"space-between"}
+      >
+        {["aaa", "bbb",].map((item) => {
+          return (
+            <Card
+              key={item}
+              sx={{
+                maxWidth: 333,
+                mt: 6,
+                ":hover .MuiCardMedia-root": {
+                  rotate: "1deg",
+                  scale: "1.1",
+                  transition: "0.35s",
+                },
+              }}
+            >
+              <CardMedia
+                sx={{ height: 277 }}
+                image="/static/images/cards/contemplative-reptile.jpg"
+                title="green iguana"
+              />
+              <CardContent>
+                <Stack
+                  direction={"row"}
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
+                >
+                  <Typography gutterBottom variant="h6" component="div">
+                    T-shirt
+                  </Typography>
+                  <Typography variant="subtitle1" component="p">
+                    120DH
+                  </Typography>
+                </Stack>
+                <Typography variant="body2" color="text.secondary">
+                  Lizards are a widespread group of squamate reptiles, with over
+                  6,000 species, ranging across all continents except Antarctica
+                </Typography>
+              </CardContent>
+              <CardActions sx={{ justifyContent: "space-between" }}>
+                <Button sx={{ textTransform: "capitalize" }} size="large">
+                  <AddShoppingCartIcon sx={{ mr: 1 }} fontSize="small" />
+                  Add To Cart
+                </Button>
+                <Rating precision={0.5} name="read-only" value={4.5} readOnly />
+              </CardActions>
+            </Card>
+          );
+        })}
       </Stack>
     </Container>
   );
