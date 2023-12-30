@@ -38,7 +38,6 @@ const Main = () => {
     setOpen(false);
   };
 const allProductsAPI = "products?populate=*"
-const menCategoryAPI = "products?populate=*&filters[category][$eq]=men"
 const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women"
 
  const [myDate,setmyDate]=useState(allProductsAPI)
