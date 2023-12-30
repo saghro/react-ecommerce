@@ -17,7 +17,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import React from "react";
+import React, { useState } from "react";
 import { useGetproductByNameQuery } from "../../Redux/product";
 import ProductDetails from "./ProductDetails";
 
@@ -41,10 +41,10 @@ const allProductsAPI = "products?populate=*"
 const menCategoryAPI = "products?populate=*&filters[category][$eq]=men"
 const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women"
 
-
+ const [myDate,setmyDate]=useState(allProductsAPI)
 
   const { data, error, isLoading } = useGetproductByNameQuery(
-    "products?populate=*"
+    myDate
       );
   if (isLoading) {
     return <Typography variant="h6"> LOADING.....................</Typography>;
