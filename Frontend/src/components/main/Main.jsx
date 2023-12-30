@@ -37,10 +37,28 @@ const Main = () => {
   const handleClose = () => {
     setOpen(false);
   };
+const allProductsAPI = "products?populate=*"
+const menCategoryAPI = "products?populate=*&filters[category][$eq]=men"
+const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women"
+
+
 
   const { data, error, isLoading } = useGetproductByNameQuery(
     "products?populate=*"
-  );
+      );
+  if (isLoading) {
+    return <Typography variant="h6"> LOADING.....................</Typography>;
+  }
+  if (error) {
+    return (
+      <Typography variant="h6">
+        {
+          // @ts-ignore
+          error.message
+        }
+      </Typography>
+    );
+  }
   // @ts-ignore
   if (data) {
     return (
@@ -125,7 +143,6 @@ const Main = () => {
                   }`}
                   title="green iguana"
                 />
-              
 
                 <CardContent>
                   <Stack
