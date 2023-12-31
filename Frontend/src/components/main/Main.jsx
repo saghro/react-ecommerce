@@ -22,10 +22,10 @@ import { useGetproductByNameQuery } from "../../Redux/product";
 import ProductDetails from "./ProductDetails";
 
 const Main = () => {
-  const [alignment, setAlignment] = React.useState("left");
+ 
 
-  const handleAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
+  const handleAlignment = (event, newValue) => {
+    setmyDate(newValue)
   };
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -78,7 +78,7 @@ const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women"
           </Box>
           <ToggleButtonGroup
             color="error"
-            value={alignment}
+            value={myDate}
             exclusive
             onChange={handleAlignment}
             aria-label="text alignment"
