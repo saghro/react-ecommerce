@@ -38,6 +38,7 @@ const Main = () => {
     setOpen(false);
   };
 const allProductsAPI = "products?populate=*"
+const menCategoryAPI = "products?populate=*&filters[category][$eq]=men"
 const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women"
 
  const [myDate,setmyDate]=useState(allProductsAPI)
@@ -92,7 +93,7 @@ const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women"
             <ToggleButton
               sx={{ color: theme.palette.text.primary }}
               className="myButton"
-              value="left"
+              value={allProductsAPI}
               aria-label="left aligned"
             >
               All Products
@@ -100,7 +101,7 @@ const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women"
             <ToggleButton
               sx={{ mx: "16px !important", color: theme.palette.text.primary }}
               className="myButton"
-              value="center"
+              value={menCategoryAPI}
               aria-label="centered"
             >
               Men Category
@@ -108,7 +109,7 @@ const womenCategoryAPI = "products?populate=*&filters[category][$eq]=women"
             <ToggleButton
               sx={{ color: theme.palette.text.primary }}
               className="myButton"
-              value="right"
+              value={womenCategoryAPI}
               aria-label="right aligned"
             >
               Women Category
